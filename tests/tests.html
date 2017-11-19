@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Tests</title>
+    <link rel="stylesheet" href="mocha/mocha.css">
+    <script src="mocha/mocha.js"></script>
+    <script src="mocha/chai.js"></script>
+    <script>
+        var assert = chai.assert;
+        mocha.setup("bdd");
+    </script>
+</head>
+<body>
+   
+    <script src="../numstringparser.min.js"></script>
+    <script src="tests/tests.js"></script>
+           
+    <div id="mocha"></div>
+    
+    <script>
+        mocha.run();
+    </script>
+</body>
+</html>
