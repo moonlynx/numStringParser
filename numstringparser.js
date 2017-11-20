@@ -77,7 +77,9 @@ function parseStringNumber(str) {
         number = str.substring(minusLen + 1);
         isNegative = true;
     }
-    
+
+    if ((number == 'нуль') || (number == 'ноль')) { return 0; }
+
     numClassWords.forEach(function(item, position){
         var itemPosition = number.indexOf(item),
             numClassWordsSize = numClassWords.length,
