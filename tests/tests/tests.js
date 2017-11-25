@@ -47,6 +47,18 @@ describe ("numToText tests", function() {
         assert.equal(-1000000000000, parseStringNumber('минус один триллион'));
     });
 
+    it ("Return 999999999999999 if argument is max number", function() {
+        assert.equal(
+            999999999999999, 
+            parseStringNumber(
+                'девятьсот девяносто девять триллионов ' +
+                'девятьсот девяносто девять миллиардов ' +
+                'девятьсот девяносто девять миллионов ' +
+                'девятьсот девяносто девять тысяч ' +
+                'девятьсот девяносто девять'
+            ));
+    });
+
     it ("Return 1000015 if argument is 'один миллион пятнадцать'", function() {
         assert.equal(1000015, parseStringNumber('один миллион пятнадцать'));
     });
