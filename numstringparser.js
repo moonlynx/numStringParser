@@ -1,3 +1,12 @@
+/**
+ * Переводит число в строковую запись
+ * сто двадцать три => 123
+ *
+ *@author {moonlynx} Yuri
+ *
+ *@version 1.0
+ *
+ */
 (function(root, factory) {
     if (typeof define === 'function' && define.amd) {
         define([], factory);
@@ -8,6 +17,19 @@
     }
 }(this, function() {    
     
+    /**
+     * Переводит строковую запись цифр, указанных до разряда, в числовую
+     *
+     * @param {Array}
+     *
+     * @return {Integer}
+     * 
+     * @throws Error если аргумент не является массивом
+     * @throws Error если не передан аргумент
+     * @throws Error если длина массива, переданного в качестве аргумента больше 3
+     * 
+     * @private
+     */
     function parseDigits(textDigitsArr) {
         var BAD_DIGITS_STRING_ERROR = new Error('Bad digits string'),
             BAD_ARGUMENT_ERROR = new Error('Bad function argument'),
@@ -58,6 +80,16 @@
         return result;
     }
 
+    /**
+     *Функция проверяет окончание для одной и двух тысяч. При
+     *необходимости заменяет "одна" на "один" и "две" на "два"
+     *
+     *@param {string} str - строка для проверки
+     *
+     *@return {string}
+     *
+     *@private
+     */
     function checkThousandEnd(str) {
         var strLen = str.length;
 
@@ -72,6 +104,13 @@
         return str;
     }
 
+    /**
+     *Переводит строковую запись числа в числовую
+     *
+     *@param {String} str - число
+     *
+     *@return {Integer}
+     */
     function parseStringNumber(str) {
         var numClassWords = ['триллион', 'миллиард', 'миллион', 'тысяч'];
         
