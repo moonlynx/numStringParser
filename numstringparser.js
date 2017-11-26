@@ -55,8 +55,7 @@
         if (typeof(textDigitsArr) == 'undefined' || textDigitsArr === null) { throw NEED_ARGUMENT_ERROR; }
         if (typeof(textDigitsArr) != 'object' || !(textDigitsArr instanceof Array)) { throw BAD_ARGUMENT_ERROR; }
         if (textDigitsArr.length > 3) { throw BAD_DIGITS_STRING_ERROR; }
-        if ((textDigitsArr.length == 1) && (textDigitsArr[0] == '')) { textDigitsArr = ['один']; }
-
+        
         while (textDigitsArr.length > 0) {
             digit = textDigitsArr.shift();
 
