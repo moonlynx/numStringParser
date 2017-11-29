@@ -5,8 +5,32 @@ API:
 ----
 1. parseStringNumber(str)
 
-Методы:
--------
+Подключение:
+------------
+* В `node.js`:
+
+```js
+const parser = require("path/to/numstringparser.js");
+console.log(parser("сто двадцать три")); 
+```
+
+* В `requireJS`:
+```js
+require(["numstringparser"], function(parser){
+    alert(parser("сто двадцать три"));
+});
+```
+* В `HTML`:
+```html
+<script src="numstringparser.js"></script>
+...
+<script>
+    alert(parseStringNumber("сто двадцать три"));
+</script>
+```
+
+Описание методов:
+-----------------
 ### parseStringNumber(str)
 
 #### Аргументы:
